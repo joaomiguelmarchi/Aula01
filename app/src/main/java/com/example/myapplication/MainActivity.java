@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -13,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     TextView tv;
+    Button btn;
     int i = 0;
 
     @SuppressLint("SetTextI18n")
@@ -23,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getString(R.string.hello);
 
-        tv = findViewById(R.id.textView);
+        btn = findViewById(R.id.button);
         tv.setText(Integer.toString(i));
 
-        tv.setOnClickListener(v -> {
+        btn.setOnClickListener(v -> {
             i++;
            tv.setText(Integer.toString(i));
         });
