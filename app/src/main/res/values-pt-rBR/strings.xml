@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">My Application</string>
+    <string name="app_not_available">Unable to open application</string>
     <string name="hello">Olá</string>
 </resources>
