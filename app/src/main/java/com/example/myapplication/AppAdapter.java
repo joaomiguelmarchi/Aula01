@@ -13,8 +13,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.mylauncher.R;
-
 import java.util.List;
 
 public class AppAdapter extends ArrayAdapter<ApplicationInfo> {
@@ -36,7 +34,7 @@ public class AppAdapter extends ArrayAdapter<ApplicationInfo> {
         final LayoutInflater inflater = LayoutInflater.from(getContext());
 
         @SuppressLint("ViewHolder") final View view = inflater.inflate(
-                com.example.mylauncher.R.layout.item_lista,
+                com.example.myapplication.R.layout.item_lista,
                 parent,
                 false
         );
@@ -44,8 +42,8 @@ public class AppAdapter extends ArrayAdapter<ApplicationInfo> {
         final ApplicationInfo app = getItem(position);
 
         if (app != null) {
-            final TextView text = view.findViewById(com.example.mylauncher.R.id.app_name);
-            final ImageView image = view.findViewById(com.example.mylauncher.R.id.app_icon);
+            final TextView text = view.findViewById(com.example.myapplication.R.id.app_name);
+            final ImageView image = view.findViewById(com.example.myapplication.R.id.app_icon);
 
             text.setText(app.loadLabel(getContext().getPackageManager()));
             image.setImageDrawable(app.loadIcon(getContext().getPackageManager()));

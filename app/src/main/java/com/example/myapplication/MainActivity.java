@@ -9,9 +9,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-import com.example.mylauncher.R;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.example.mylauncher.R.layout.activity_main);
+        setContentView(com.example.myapplication.R.layout.activity_main);
 
         final ListView listaApps = findViewById(R.id.lista_apps);
 
