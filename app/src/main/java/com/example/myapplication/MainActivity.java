@@ -1,61 +1,40 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.skydoves.colorpickerview.ColorEnvelope;
 import com.skydoves.colorpickerview.ColorPickerDialog;
 import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener;
 
 public class MainActivity extends AppCompatActivity {
-
     SimplePaint simplePaint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
         simplePaint = findViewById(R.id.simplePaint);
 
-        findViewById(R.id.button).setOnClickListener(v -> {
-            new ColorPickerDialog.Builder(this)
-                    .setTitle("ColorPicker Dialog")
-                    .setPreferenceName("MyColorPickerDialog")
-                    .setPositiveButton("Confirmar",
-                            new ColorEnvelopeListener() {
-                                @Override
-                                public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
-                                    setColor(envelope);
-                                }
-                            })
-                    .setNegativeButton("Cancelar",
-                            new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    dialogInterface.dismiss();
-                                }
-                            })
-                    .attachAlphaSlideBar(true) // the default value is true.
-                    .attachBrightnessSlideBar(true)  // the default value is true.
-                    .setBottomSpace(12) // set a bottom space between the last slidebar and buttons.
-                    .show();
-        });
+        final ImageButton btnImCircle = findViewById(R.id.circle_button);
+        final ImageButton btnImSquare = findViewById(R.id.square_button);
+        final ImageButton btnPencil = findViewById(R.id.finger_button);
+        final ImageButton btnChangeColor = findViewById(R.id.change_color_button);
+        final ImageButton btnResetPaint = findViewById(R.id.clear_button);
+        final ImageButton btnUndoPaint = findViewById(R.id.undo_button);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-    }
+        btnImCircle.setOnClickListener(view -> simplePaint.setShape(Shapes.Circle));
+        btnImSquare.setOnClickListener(view -> simplePaint.setShape(Shapes.Square));
+        btnPencil.setOnClickListener(view -> simplePaint.setShape(Shapes.Finger));
+        btnResetPaint.setOnClickListener(view -> simplePaint.resetPaint());
+        btnUndoPaint.setOnClickListener(view -> simplePaint.undo());
 
-    public void setColor(ColorEnvelope cor) {
-        simplePaint.setColor(cor.getColor());
+        btnChangeColor.setOnClickListener(view -> simplePaint.setColorPicker());
     }
 }

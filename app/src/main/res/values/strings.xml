@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="hello">Hi</string>
+    <string name="cancel">cancel</string>
+    <string name="confirm">confirm</string>
+    <string name="btn_color">Color</string>
+    <string name="btn_square">Square</string>
+    <string name="btn_cricle">Cricle</string>
+    <string name="btn_path">Drawn</string>
+    <string name="chage_color_dialog">Change color</string>
 </resources>

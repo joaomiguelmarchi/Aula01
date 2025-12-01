@@ -2,4 +2,11 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="hello">Olá</string>
+    <string name="cancel">cancelar</string>
+    <string name="confirm">confirmar</string>
+    <string name="btn_color">Cor</string>
+    <string name="btn_square">Quadrado</string>
+    <string name="btn_cricle">Circulo</string>
+    <string name="btn_path">Desenhar</string>
+    <string name="chage_color_dialog">Mudar cor do pincel</string>
 </resources>
