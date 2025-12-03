@@ -102,7 +102,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     @Override
     public void onLocationChanged(@NonNull Location location) {
         updateLocationUI(location);
-
         lm.removeUpdates(this);
         bnt.setText("Obter Localização");
         bnt.setEnabled(true);
